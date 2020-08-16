@@ -10,17 +10,44 @@ const phoneUtil = require('google-libphonenumber').PhoneNumberUtil.getInstance()
 })
 export class MatPhoneCodeValidatorComponent implements OnInit {
 
+  // Main form group that contains the code and number
   @Input() group: FormGroup;
+
+  // Country code form control - This will contain the country code
   @Input() contryCode: FormControl;
+
+  // Phone number form control
   @Input() mobileNumber: FormControl;
+
+  // Error message label name - Default is Mobile number
   @Input() errorlabel = 'Mobile number';
+
+  // Flag to recognise if there are any custom validators provided
   @Input() hasCustomValidators = false;
+
+  // Place holder string - Default is Mobile number
+  @Input() placeholder = 'Mobile number';
+
+  // Mobile enumber input box label - Default is Mobile number
+  @Input() label = 'Mobile number';
+
+  // ID sttribute of mobile number input tag - Default is contact_mobile_number
+  @Input() id = 'contact_mobile_number';
+
+  // Control to store contry code search valye
   countryCodeSearchVal: FormControl;
+
+  // holds the list of country coeds from google library
   countryCodes: Array<any> = [];
+
+  // Holds teh list of filtered county code list after search vaue
   filterCountryCode: Array<any>;
+
+  // errorMessage for showing custom errors
   errorMessage: string | boolean;
+
+  // Store teh seletec country code name temporarly
   selectedCodeName: any;
-  objectFn = Object;
 
   constructor( ) {
     // Get the country code list
@@ -81,6 +108,16 @@ export class MatPhoneCodeValidatorComponent implements OnInit {
       return arr.filter(f => ('' + f[key]).toLowerCase().includes(('' + val).toLowerCase()));
     } else {
       return arr.filter(f => f.toLowerCase().includes(val.toLowerCase()));
+    }
+  }
+
+  // Check if its custom validation error and return it
+  getCustomError() {
+    const errMsg = this.mobileNumber.errors[Object.keys(this.mobileNumber.errors)[0]];
+    if (typeof errMsg == 'string') {
+      return errMsg;
+    } else {
+      return '';
     }
   }
 

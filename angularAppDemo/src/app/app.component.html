@@ -372,6 +372,7 @@
 
   </div>
 
-  <lib-mat-phone-code-validator [group]="phone" 
+  <lib-mat-phone-code-validator [group]="phone"
+    [hasCustomValidators]="true"
     [contryCode]="phone.get('code')"
     [mobileNumber]="phone.get('number')"></lib-mat-phone-code-validator>

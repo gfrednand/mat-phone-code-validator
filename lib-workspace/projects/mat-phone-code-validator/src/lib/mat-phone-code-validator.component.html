@@ -21,27 +21,27 @@
   </div>
   <div class="mobile-input">
     <mat-form-field class="mobile-input-field" [formGroup]="group">
-      <input  matInput [placeholder]="'Mobile number'" [name]="'Mobile number'" [id]="'contact_mobile_number'"
+      <input  matInput [placeholder]="placeholder" [name]="label" [id]="id"
         [formControl]="mobileNumber" OnlyNumberDirective (onBlur)="isPhoneValid()">
       <mat-error *ngIf="mobileNumber.touched && mobileNumber.invalid">
         <ng-container *ngIf="hasCustomValidators">
           <!-- Easy way to display any kind of error in HTML
-                    -> Get the first error key and display the error string in it-->
-          {{ mobileNumber.errors[objectFn.keys(mobileNumber.errors)[0]] }}
+               -> Get the first error key and display the error string in it-->
+          {{ getCustomError() }}
         </ng-container>
-        <ng-container *ngIf="!hasCustomValidators && mobileNumber.errors?.required">
+        <ng-container *ngIf="mobileNumber.errors?.required">
           {{errorlabel}} is required
         </ng-container>
-        <ng-container *ngIf="!hasCustomValidators && mobileNumber.errors?.minlength">
+        <ng-container *ngIf="mobileNumber.errors?.minlength">
           {{errorlabel}} must be alteast {{mobileNumber.errors.minlength.requiredLength}} digits long
         </ng-container>
-        <ng-container *ngIf="!hasCustomValidators && mobileNumber.errors?.forbiddenName">
+        <ng-container *ngIf="mobileNumber.errors?.forbiddenName">
           This number is forbidden
         </ng-container>
-        <ng-container *ngIf="!hasCustomValidators && mobileNumber.errors?.maxlength">
+        <ng-container *ngIf="mobileNumber.errors?.maxlength">
           {{errorlabel}} must be atmost {{mobileNumber.errors.maxlength.requiredLength}} digits long
         </ng-container>
-        <ng-container *ngIf="!hasCustomValidators && !mobileNumber.errors?.maxlength && !mobileNumber.errors?.minlength && mobileNumber.errors?.incorrect">
+        <ng-container *ngIf="!mobileNumber.errors?.maxlength && !mobileNumber.errors?.minlength && mobileNumber.errors?.incorrect">
           Please enter a valid phone number
         </ng-container>
       </mat-error>

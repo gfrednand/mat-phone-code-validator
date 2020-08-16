@@ -10,8 +10,11 @@ export class AppComponent {
   title = 'angularAppDemo';
   phone = new FormGroup({
     code: new FormControl('', [Validators.required]),
-    number: new FormControl('', [
-      Validators.required,
+    number: new FormControl('', [(control) => {
+          if (!control.value) {
+              return {req: 'Please enter the mobile number'};
+          }
+        },
       Validators.maxLength(15),
       Validators.minLength(5)
     ])
