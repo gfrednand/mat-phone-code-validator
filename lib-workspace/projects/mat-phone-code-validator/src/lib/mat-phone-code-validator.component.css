@@ -1,0 +1,18 @@
+.mobile-number {
+    display: inline-flex;
+}
+.mobile-number .mobile-code-form {
+    max-width: 100px;
+}
+.mobile-number .mobile-input {
+    margin-left: 10px;
+}
+.mat-error {
+    color: red;
+    margin-top: 5px;
+}
+.mat-error::before{
+    content: "*";
+    color: red;
+    font-weight: bold;
+}
