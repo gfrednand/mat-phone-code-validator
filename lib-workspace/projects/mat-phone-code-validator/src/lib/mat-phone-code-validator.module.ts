@@ -23,6 +23,17 @@ import { MatPhoneCodeValidatorComponent } from './mat-phone-code-validator.compo
     MatListModule,
     NgxMatSelectSearchModule
   ],
-  exports: [MatPhoneCodeValidatorComponent]
+  exports: [
+    MatPhoneCodeValidatorComponent,
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatListModule,
+    NgxMatSelectSearchModule
+  ]
 })
 export class MatPhoneCodeValidatorModule { }

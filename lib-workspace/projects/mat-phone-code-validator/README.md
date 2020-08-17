@@ -7,8 +7,14 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 
 Run this command in you angualr project `npm i mat-phone-code-validator --save`
 
+## Requirements
+
+1. This component works on `FormsModule` form group and form controls. Please include them. To get its importance you can view this article. [https://dev.to/vishesh/angular-reactive-forms-formsmodule-is-it-necessary-2aca](https://dev.to/vishesh/angular-reactive-forms-formsmodule-is-it-necessary-2aca)
 
 # Usage
+
+`@import '~@angular/material/prebuilt-themes/indigo-pink.css';` - Add this line to the main styles.css / styles.scss file. This is required because it only has the complete styles for the package.
+
 Import the module,
 > import { MatPhoneCodeValidatorModule } from 'mat-phone-code-validator';
 
@@ -96,13 +102,10 @@ Finally use like below in the `component.html`
   @Input() id = 'contact_mobile_number';
 ```
 
-## Requirements
-
-1. `Angular Material`. You can install it `ng add @angualr/material`
-
-2. This component works on formsModule's form group and form controls. Please include them. To get its importance you can view this article. [https://dev.to/vishesh/angular-reactive-forms-formsmodule-is-it-necessary-2aca](https://dev.to/vishesh/angular-reactive-forms-formsmodule-is-it-necessary-2aca)
-
-3. Please include `BrowserAnimationsModule` and `FormsModule` in you module where you want to use this library. Mostly it will be present by default.
+### Style class that you can use to add more styles or overwrite
+1. .mobile-number - Main div wrapper
+2. .mobile-code - Contains the mobile code select box
+2. .mobile-input - Contains the mobile input field
 
 # Support
 

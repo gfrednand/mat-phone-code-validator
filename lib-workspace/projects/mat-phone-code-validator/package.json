@@ -1,6 +1,11 @@
 {
   "name": "mat-phone-code-validator",
-  "version": "0.0.2",
+  "version": "1.0.2",
+  "author": "Vishesh M (visheshvvvm@gmail.com)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/visheshCuriousDev/mat-phone-code-validator.git"
+  },
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14",
@@ -17,5 +22,24 @@
     "google-libphonenumber": "^3.2.11",
     "ngx-mat-select-search": "^3.0.3",
     "tslib": "^2.0.0"
-  }
+  },
+  "homepage": "https://github.com/visheshCuriousDev/mat-phone-code-validator",
+  "keywords": [
+    "angular",
+    "javascript",
+    "typescript",
+    "typeahead",
+    "directive",
+    "angular-material",
+    "mat",
+    "mat-phone",
+    "mobile-code",
+    "mobile-validation",
+    "phone-code",
+    "phone-validator"
+  ],
+  "bugs": {
+    "url": "https://github.com/visheshCuriousDev/mat-phone-code-validator/issues"
+  },
+  "license": "MIT"
 }
