@@ -7,7 +7,7 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 
 Run this command in you angualr project `npm i mat-phone-code-validator --save`
 
-![alt invalid](https://drive.google.com/file/d/1cX8l8PRuxiXQ8bb-FNwh9OoW-XXaa5fZ/view?usp=sharing)
+![alt invalid](https://github.com/visheshCuriousDev/mat-phone-code-validator/blob/master/lib-workspace/projects/mat-phone-code-validator/src/lib/assets/phone-code-EX2.gif?raw=true)
 
 ## Requirements
 
