@@ -7,6 +7,8 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 
 Run this command in you angualr project `npm i mat-phone-code-validator --save`
 
+![alt invalid](https://drive.google.com/file/d/1cX8l8PRuxiXQ8bb-FNwh9OoW-XXaa5fZ/view?usp=sharing)
+
 ## Requirements
 
 1. This component works on `FormsModule` form group and form controls. Please include them. To get its importance you can view this article. [https://dev.to/vishesh/angular-reactive-forms-formsmodule-is-it-necessary-2aca](https://dev.to/vishesh/angular-reactive-forms-formsmodule-is-it-necessary-2aca)

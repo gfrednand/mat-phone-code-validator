@@ -114,7 +114,7 @@ export class MatPhoneCodeValidatorComponent implements OnInit {
   // Check if its custom validation error and return it
   getCustomError() {
     const errMsg = this.mobileNumber.errors[Object.keys(this.mobileNumber.errors)[0]];
-    if (typeof errMsg == 'string') {
+    if (typeof errMsg == 'string' && Object.keys(this.mobileNumber.errors)[0] != 'incorrect') {
       return errMsg;
     } else {
       return '';
