@@ -7,11 +7,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import { MobileNumberFormatterDirective } from './directives/mobile-number-formatter/mobile-number-formatter.directive';
 import { OnlyNumberDirective } from './directives/only-number.directive';
 import { MatPhoneCodeValidatorComponent } from './mat-phone-code-validator.component';
 
 @NgModule({
-  declarations: [MatPhoneCodeValidatorComponent, OnlyNumberDirective],
+  declarations: [MatPhoneCodeValidatorComponent, OnlyNumberDirective, MobileNumberFormatterDirective],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

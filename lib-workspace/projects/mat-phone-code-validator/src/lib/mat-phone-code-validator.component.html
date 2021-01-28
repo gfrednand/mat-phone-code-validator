@@ -6,7 +6,7 @@
           <ngx-mat-select-search [formControl]="countryCodeSearchVal" placeholderLabel="Search phone code"
             noEntriesFoundLabel="'No matching codes found'"></ngx-mat-select-search>
         </mat-option>
-        <mat-option [value]="code['phone_code']" *ngFor="let code of filterCountryCode"
+        <mat-option [value]="code['phone_code']+code['name']" *ngFor="let code of filterCountryCode"
           (click)="isPhoneValid(code['name'])">
           {{'+ ' + code['phone_code']}}
           <span class="phone-code-float">({{code['name']}})</span>
@@ -22,7 +22,8 @@
   <div class="mobile-input">
     <mat-form-field class="mobile-input-field" [formGroup]="group">
       <input  matInput [placeholder]="placeholder" [name]="label" [id]="id"
-        [formControl]="mobileNumber" OnlyNumberDirective (onBlur)="isPhoneValid()">
+        [formControl]="mobileNumber" OnlyNumberDirective (onBlur)="isPhoneValid()"
+        appMobileNumberFormatter [contryCode]="contryCode" [countryCodeList]="countryCodes">
       <mat-error *ngIf="mobileNumber.touched && mobileNumber.invalid">
         <ng-container *ngIf="hasCustomValidators">
           <!-- Easy way to display any kind of error in HTML

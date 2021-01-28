@@ -67,7 +67,7 @@ export class MatPhoneCodeValidatorComponent implements OnInit {
     // listen for search field value changes
     this.countryCodeSearchVal.valueChanges
       .subscribe((val) => {
-        this.filterCountryCode = this.filterArray(this.countryCodes, val, 'phone_code');
+        this.filterCountryCode = this.filterArray(this.countryCodes, val);
       });
     // Check mobile number validity
     this.mobileNumber.valueChanges
@@ -103,11 +103,25 @@ export class MatPhoneCodeValidatorComponent implements OnInit {
   }
 
   /* Filter Array of objects or strings */
-  filterArray(arr, val, key = null) {
-    if (key) {
-      return arr.filter(f => ('' + f[key]).toLowerCase().includes(('' + val).toLowerCase()));
-    } else {
+  filterArray(arr, val) {
+    if (arr[0] && typeof arr[0] === 'string') {
       return arr.filter(f => f.toLowerCase().includes(val.toLowerCase()));
+    } else if(arr[0] && typeof arr[0] === 'object') {
+      return arr.filter(f => {
+        let valuePresent = false;
+        // For all keys in the object
+        for(let key in f) {
+          // check if the value matched search key
+          if(
+            ('' + f[key]).toLowerCase().includes(('' + val).toLowerCase())
+          ) {
+            valuePresent = true;
+            break
+          }
+        }
+        // return result
+        return valuePresent;
+      });
     }
   }
 
